@@ -8,7 +8,12 @@ class DioHelper {
     dio = Dio(
       BaseOptions(
         baseUrl: baseURL,
+        connectTimeout: 20 * 1000,
+        receiveTimeout: 20 * 1000,
         receiveDataWhenStatusError: true,
+        headers: {
+          "Content-Type": "application/json",
+        },
       ),
     );
   }
